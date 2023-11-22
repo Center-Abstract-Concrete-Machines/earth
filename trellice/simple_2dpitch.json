@@ -1,0 +1,335 @@
+{
+	"class": "Module",
+	"id": "node_125654",
+	"inlets": {
+		
+	},
+	"outlets": [
+		{
+			"assist": "out1"
+		},
+		{
+			"assist": "out2"
+		}
+	],
+	"imports": {
+		
+	},
+	"functions": {
+		
+	},
+	"block": {
+		"class": "Block",
+		"id": "node_125699",
+		"children": [
+			{
+				"class": "Declaration",
+				"id": "node_125656",
+				"name": "cv1",
+				"inputs": [
+					{
+						"class": "Constant",
+						"id": "node_125657",
+						"value": "0",
+						"eval": 0,
+						"type": "constant int",
+						"source": "box: [param cv1 0 @max 5 @min 0] => cv1"
+					}
+				],
+				"attributes": {
+					"max": {
+						"class": "Attribute",
+						"id": "node_125658",
+						"name": "max",
+						"value": {
+							"class": "Constant",
+							"id": "node_125507",
+							"value": "5",
+							"eval": 5,
+							"type": "constant int",
+							"source": "1:17 -> 1:18"
+						}
+					},
+					"min": {
+						"class": "Attribute",
+						"id": "node_125659",
+						"name": "min",
+						"value": {
+							"class": "Constant",
+							"id": "node_125509",
+							"value": "0",
+							"eval": 0,
+							"type": "constant int",
+							"source": "1:24 -> 1:25"
+						}
+					}
+				},
+				"type": "control t_sample",
+				"typename": "Param",
+				"source": "box: [param cv1 0 @max 5 @min 0] => cv1"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125664",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125665",
+						"operator": "add",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125666",
+								"name": "cv1",
+								"type": "control t_sample",
+								"source": "box: [add $in1 $in2] => add_2315"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125667",
+								"value": "0",
+								"eval": 0,
+								"type": "constant int",
+								"source": "box: [add $in1 $in2] => add_2315"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [add $in1 $in2] => add_2315"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125668",
+						"name": "add_2315",
+						"type": "control t_sample",
+						"source": "box: [add $in1 $in2] => add_2315"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [add $in1 $in2] => add_2315"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125669",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125670",
+						"operator": "add",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125671",
+								"name": "add_2315",
+								"type": "control t_sample",
+								"source": "box: [add $in1 0.25] => add_2311"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125672",
+								"value": "0.25",
+								"eval": 0.25,
+								"type": "constant t_sample",
+								"source": "box: [add $in1 0.25] => add_2311"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [add $in1 0.25] => add_2311"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125673",
+						"name": "add_2311",
+						"type": "control t_sample",
+						"source": "box: [add $in1 0.25] => add_2311"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [add $in1 0.25] => add_2311"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125674",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125675",
+						"operator": "fastpow",
+						"inputs": [
+							{
+								"class": "Constant",
+								"id": "node_125702",
+								"value": 2,
+								"eval": 2,
+								"type": "constant int",
+								"source": "box: [fastpow $in1 $in2] => fastpow_2313"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125677",
+								"name": "add_2311",
+								"type": "control t_sample",
+								"source": "box: [fastpow $in1 $in2] => fastpow_2313"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [fastpow $in1 $in2] => fastpow_2313"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125678",
+						"name": "fastpow_2313",
+						"type": "control t_sample",
+						"source": "box: [fastpow $in1 $in2] => fastpow_2313"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [fastpow $in1 $in2] => fastpow_2313"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125679",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125680",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125681",
+								"name": "fastpow_2313",
+								"type": "control t_sample",
+								"source": "box: [mul $in1 27.5] => mul_2314"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125682",
+								"value": "27.5",
+								"eval": 27.5,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 27.5] => mul_2314"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [mul $in1 27.5] => mul_2314"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125683",
+						"name": "mul_2314",
+						"type": "control t_sample",
+						"source": "box: [mul $in1 27.5] => mul_2314"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [mul $in1 27.5] => mul_2314"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125687",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125688",
+						"operator": "phasor",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125700",
+								"name": "mul_2314",
+								"type": "control t_sample",
+								"source": "box: [phasor $in1 $in2] => phasor_2492"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125690",
+								"value": "0",
+								"eval": 0,
+								"type": "constant int",
+								"source": "box: [phasor $in1 $in2] => phasor_2492"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_2492"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125691",
+						"name": "phasor_2492",
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_2492"
+					}
+				],
+				"source": "box: [phasor $in1 $in2] => phasor_2492"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125692",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125693",
+						"name": "phasor_2492",
+						"type": "signal t_sample",
+						"source": "box: [out 1 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125694",
+						"name": "out1",
+						"type": "signal t_sample",
+						"source": "box: [out 1 $in1] => "
+					}
+				],
+				"source": "box: [out 1 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_125695",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125696",
+						"name": "phasor_2492",
+						"type": "signal t_sample",
+						"source": "box: [out 2 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125697",
+						"name": "out2",
+						"type": "signal t_sample",
+						"source": "box: [out 2 $in1] => "
+					}
+				],
+				"source": "box: [out 2 $in1] => "
+			}
+		]
+	},
+	"source": "patcher: gen.patcher 000000003B12DCA0 graph 000000003B39AE80"
+}
