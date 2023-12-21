@@ -1,9 +1,20 @@
 {
 	"class": "Module",
-	"id": "node_125654",
-	"inlets": {
-		
-	},
+	"id": "node_124930",
+	"inlets": [
+		{
+			"assist": "in1",
+			"default": 0
+		},
+		{
+			"assist": "in2",
+			"default": 0
+		},
+		{
+			"assist": "in3",
+			"default": 0
+		}
+	],
 	"outlets": [
 		{
 			"assist": "out1"
@@ -20,277 +31,211 @@
 	},
 	"block": {
 		"class": "Block",
-		"id": "node_125699",
+		"id": "node_125387",
 		"children": [
 			{
 				"class": "Declaration",
-				"id": "node_125656",
-				"name": "cv1",
+				"id": "node_124932",
+				"name": "history_2179",
 				"inputs": [
 					{
 						"class": "Constant",
-						"id": "node_125657",
+						"id": "node_124933",
 						"value": "0",
 						"eval": 0,
 						"type": "constant int",
-						"source": "box: [param cv1 0 @max 5 @min 0] => cv1"
+						"source": "box: [history history_2179 0 $in1] => history_2179"
+					}
+				],
+				"attributes": {
+					
+				},
+				"type": "signal t_sample",
+				"typename": "History",
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [history history_2179 0 $in1] => history_2179"
+			},
+			{
+				"class": "Declaration",
+				"id": "node_124934",
+				"name": "env_shape",
+				"inputs": [
+					{
+						"class": "Constant",
+						"id": "node_124935",
+						"value": "-1",
+						"eval": -1,
+						"type": "constant int",
+						"source": "box: [param env_shape -1 @max 3 @min -3] => env_shape"
 					}
 				],
 				"attributes": {
 					"max": {
 						"class": "Attribute",
-						"id": "node_125658",
+						"id": "node_124936",
 						"name": "max",
 						"value": {
 							"class": "Constant",
-							"id": "node_125507",
-							"value": "5",
-							"eval": 5,
+							"id": "node_123493",
+							"value": "3",
+							"eval": 3,
 							"type": "constant int",
-							"source": "1:17 -> 1:18"
+							"source": "2:24 -> 2:25"
 						}
 					},
 					"min": {
 						"class": "Attribute",
-						"id": "node_125659",
+						"id": "node_124937",
 						"name": "min",
 						"value": {
 							"class": "Constant",
-							"id": "node_125509",
-							"value": "0",
-							"eval": 0,
+							"id": "node_123495",
+							"value": "-3",
+							"eval": -3,
 							"type": "constant int",
-							"source": "1:24 -> 1:25"
+							"source": "2:31 -> 2:33"
 						}
 					}
 				},
 				"type": "control t_sample",
 				"typename": "Param",
-				"source": "box: [param cv1 0 @max 5 @min 0] => cv1"
+				"source": "box: [param env_shape -1 @max 3 @min -3] => env_shape"
+			},
+			{
+				"class": "Declaration",
+				"id": "node_124938",
+				"name": "history_3219",
+				"inputs": [
+					{
+						"class": "Constant",
+						"id": "node_124939",
+						"value": "0",
+						"eval": 0,
+						"type": "constant int",
+						"source": "box: [history history_3219 0 $in1] => history_3219"
+					}
+				],
+				"attributes": {
+					
+				},
+				"type": "signal t_sample",
+				"typename": "History",
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [history history_3219 0 $in1] => history_3219"
+			},
+			{
+				"class": "Declaration",
+				"id": "node_124940",
+				"name": "history_4013",
+				"inputs": [
+					{
+						"class": "Constant",
+						"id": "node_124941",
+						"value": "0",
+						"eval": 0,
+						"type": "constant int",
+						"source": "box: [history history_4013 0 $in1] => history_4013"
+					}
+				],
+				"attributes": {
+					
+				},
+				"type": "signal t_sample",
+				"typename": "History",
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [history history_4013 0 $in1] => history_4013"
+			},
+			{
+				"class": "Declaration",
+				"id": "node_124942",
+				"name": "pitch",
+				"inputs": [
+					{
+						"class": "Constant",
+						"id": "node_124943",
+						"value": "0",
+						"eval": 0,
+						"type": "constant int",
+						"source": "box: [history pitch 0 $in1] => pitch"
+					}
+				],
+				"attributes": {
+					
+				},
+				"type": "signal t_sample",
+				"typename": "History",
+				"source": "box: [history pitch 0 $in1] => pitch"
 			},
 			{
 				"class": "Statement",
-				"id": "node_125664",
+				"id": "node_124944",
 				"inputs": [
 					{
-						"class": "Expression",
-						"id": "node_125665",
-						"operator": "add",
-						"inputs": [
-							{
-								"class": "Variable",
-								"id": "node_125666",
-								"name": "cv1",
-								"type": "control t_sample",
-								"source": "box: [add $in1 $in2] => add_2315"
-							},
-							{
-								"class": "Constant",
-								"id": "node_125667",
-								"value": "0",
-								"eval": 0,
-								"type": "constant int",
-								"source": "box: [add $in1 $in2] => add_2315"
-							}
-						],
-						"attributes": {
-							
-						},
-						"type": "control t_sample",
-						"source": "box: [add $in1 $in2] => add_2315"
+						"class": "Variable",
+						"id": "node_124945",
+						"name": "pitch",
+						"type": "signal t_sample",
+						"source": "code: 1:1 -> 1:6 [expr] => expr_3983"
 					}
 				],
 				"outputs": [
 					{
 						"class": "Variable",
-						"id": "node_125668",
-						"name": "add_2315",
-						"type": "control t_sample",
-						"source": "box: [add $in1 $in2] => add_2315"
+						"id": "node_124946",
+						"name": "expr_3983",
+						"type": "signal t_sample",
+						"source": "code: 1:1 -> 1:6 [expr] => expr_3983"
 					}
 				],
-				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [add $in1 $in2] => add_2315"
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: code: 1:1 -> 1:6 [expr] => expr_3983"
 			},
 			{
 				"class": "Statement",
-				"id": "node_125669",
+				"id": "node_124947",
 				"inputs": [
 					{
 						"class": "Expression",
-						"id": "node_125670",
-						"operator": "add",
-						"inputs": [
-							{
-								"class": "Variable",
-								"id": "node_125671",
-								"name": "add_2315",
-								"type": "control t_sample",
-								"source": "box: [add $in1 0.25] => add_2311"
-							},
-							{
-								"class": "Constant",
-								"id": "node_125672",
-								"value": "0.25",
-								"eval": 0.25,
-								"type": "constant t_sample",
-								"source": "box: [add $in1 0.25] => add_2311"
-							}
-						],
-						"attributes": {
-							
-						},
-						"type": "control t_sample",
-						"source": "box: [add $in1 0.25] => add_2311"
-					}
-				],
-				"outputs": [
-					{
-						"class": "Variable",
-						"id": "node_125673",
-						"name": "add_2311",
-						"type": "control t_sample",
-						"source": "box: [add $in1 0.25] => add_2311"
-					}
-				],
-				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [add $in1 0.25] => add_2311"
-			},
-			{
-				"class": "Statement",
-				"id": "node_125674",
-				"inputs": [
-					{
-						"class": "Expression",
-						"id": "node_125675",
-						"operator": "fastpow",
-						"inputs": [
-							{
-								"class": "Constant",
-								"id": "node_125702",
-								"value": 2,
-								"eval": 2,
-								"type": "constant int",
-								"source": "box: [fastpow $in1 $in2] => fastpow_2313"
-							},
-							{
-								"class": "Variable",
-								"id": "node_125677",
-								"name": "add_2311",
-								"type": "control t_sample",
-								"source": "box: [fastpow $in1 $in2] => fastpow_2313"
-							}
-						],
-						"attributes": {
-							
-						},
-						"type": "control t_sample",
-						"source": "box: [fastpow $in1 $in2] => fastpow_2313"
-					}
-				],
-				"outputs": [
-					{
-						"class": "Variable",
-						"id": "node_125678",
-						"name": "fastpow_2313",
-						"type": "control t_sample",
-						"source": "box: [fastpow $in1 $in2] => fastpow_2313"
-					}
-				],
-				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [fastpow $in1 $in2] => fastpow_2313"
-			},
-			{
-				"class": "Statement",
-				"id": "node_125679",
-				"inputs": [
-					{
-						"class": "Expression",
-						"id": "node_125680",
+						"id": "node_124948",
 						"operator": "mul",
 						"inputs": [
 							{
 								"class": "Variable",
-								"id": "node_125681",
-								"name": "fastpow_2313",
-								"type": "control t_sample",
-								"source": "box: [mul $in1 27.5] => mul_2314"
+								"id": "node_124949",
+								"name": "in1",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2178"
 							},
-							{
-								"class": "Constant",
-								"id": "node_125682",
-								"value": "27.5",
-								"eval": 27.5,
-								"type": "constant t_sample",
-								"source": "box: [mul $in1 27.5] => mul_2314"
-							}
-						],
-						"attributes": {
-							
-						},
-						"type": "control t_sample",
-						"source": "box: [mul $in1 27.5] => mul_2314"
-					}
-				],
-				"outputs": [
-					{
-						"class": "Variable",
-						"id": "node_125683",
-						"name": "mul_2314",
-						"type": "control t_sample",
-						"source": "box: [mul $in1 27.5] => mul_2314"
-					}
-				],
-				"source": "source: [gen $in1 $in2 @file oopsy.cv2hz] => gen_2316 parent: box: [mul $in1 27.5] => mul_2314"
-			},
-			{
-				"class": "Statement",
-				"id": "node_125687",
-				"inputs": [
-					{
-						"class": "Expression",
-						"id": "node_125688",
-						"operator": "phasor",
-						"inputs": [
 							{
 								"class": "Variable",
-								"id": "node_125700",
-								"name": "mul_2314",
-								"type": "control t_sample",
-								"source": "box: [phasor $in1 $in2] => phasor_2492"
-							},
-							{
-								"class": "Constant",
-								"id": "node_125690",
-								"value": "0",
-								"eval": 0,
-								"type": "constant int",
-								"source": "box: [phasor $in1 $in2] => phasor_2492"
+								"id": "node_124950",
+								"name": "history_2179",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2178"
 							}
 						],
 						"attributes": {
 							
 						},
 						"type": "signal t_sample",
-						"source": "box: [phasor $in1 $in2] => phasor_2492"
+						"source": "box: [mul $in1 $in2] => mul_2178"
 					}
 				],
 				"outputs": [
 					{
 						"class": "Variable",
-						"id": "node_125691",
-						"name": "phasor_2492",
+						"id": "node_124951",
+						"name": "mul_2178",
 						"type": "signal t_sample",
-						"source": "box: [phasor $in1 $in2] => phasor_2492"
+						"source": "box: [mul $in1 $in2] => mul_2178"
 					}
 				],
-				"source": "box: [phasor $in1 $in2] => phasor_2492"
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [mul $in1 $in2] => mul_2178"
 			},
 			{
 				"class": "Statement",
-				"id": "node_125692",
+				"id": "node_124952",
 				"inputs": [
 					{
 						"class": "Variable",
-						"id": "node_125693",
-						"name": "phasor_2492",
+						"id": "node_124953",
+						"name": "mul_2178",
 						"type": "signal t_sample",
 						"source": "box: [out 1 $in1] => "
 					}
@@ -298,7 +243,3293 @@
 				"outputs": [
 					{
 						"class": "Variable",
-						"id": "node_125694",
+						"id": "node_124954",
+						"name": "gen_3985",
+						"type": "signal t_sample",
+						"source": "box: [out 1 $in1] => "
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [out 1 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_124955",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124956",
+						"operator": "not",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124957",
+								"name": "history_2179",
+								"type": "signal t_sample",
+								"source": "box: [not $in1] => not_2177"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "box: [not $in1] => not_2177"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124958",
+						"name": "not_2177",
+						"type": "signal int",
+						"source": "box: [not $in1] => not_2177"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [not $in1] => not_2177"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124959",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124960",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124961",
+								"name": "in1",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2180"
+							},
+							{
+								"class": "Variable",
+								"id": "node_124962",
+								"name": "not_2177",
+								"type": "signal int",
+								"source": "box: [mul $in1 $in2] => mul_2180"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2180"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124963",
+						"name": "mul_2180",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2180"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [mul $in1 $in2] => mul_2180"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124964",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124965",
+						"operator": "latch",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124966",
+								"name": "expr_3983",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2] => latch_2167"
+							},
+							{
+								"class": "Variable",
+								"id": "node_124967",
+								"name": "mul_2180",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2] => latch_2167"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2] => latch_2167"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124968",
+						"name": "latch_2167",
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2] => latch_2167"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [latch $in1 $in2] => latch_2167"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124969",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124970",
+						"operator": "phasor",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124971",
+								"name": "latch_2167",
+								"type": "signal t_sample",
+								"source": "box: [phasor $in1 $in2] => phasor_2181"
+							},
+							{
+								"class": "Constant",
+								"id": "node_124972",
+								"value": "0",
+								"eval": 0,
+								"type": "constant int",
+								"source": "box: [phasor $in1 $in2] => phasor_2181"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_2181"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124973",
+						"name": "phasor_2181",
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_2181"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [phasor $in1 $in2] => phasor_2181"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124974",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124975",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124976",
+								"name": "in3",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 samplerate] => mul_3942"
+							},
+							{
+								"class": "Constant",
+								"id": "node_124977",
+								"value": "samplerate",
+								"eval": 44100,
+								"type": "constant int",
+								"source": "box: [mul $in1 samplerate] => mul_3942"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 samplerate] => mul_3942"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124978",
+						"name": "mul_3942",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 samplerate] => mul_3942"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [mul $in1 samplerate] => mul_3942"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124979",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124980",
+						"operator": "div",
+						"inputs": [
+							{
+								"class": "Constant",
+								"id": "node_124981",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [rdiv $in1 1] => rdiv_2172"
+							},
+							{
+								"class": "Variable",
+								"id": "node_124982",
+								"name": "mul_3942",
+								"type": "signal t_sample",
+								"source": "box: [rdiv $in1 1] => rdiv_2172"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [rdiv $in1 1] => rdiv_2172"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124983",
+						"name": "rdiv_2172",
+						"type": "signal t_sample",
+						"source": "box: [rdiv $in1 1] => rdiv_2172"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [rdiv $in1 1] => rdiv_2172"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124984",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124985",
+						"operator": "latch",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124986",
+								"name": "rdiv_2172",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2 @init 1] => latch_2173"
+							},
+							{
+								"class": "Variable",
+								"id": "node_124987",
+								"name": "mul_2180",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2 @init 1] => latch_2173"
+							}
+						],
+						"attributes": {
+							"init": {
+								"class": "Attribute",
+								"id": "node_124988",
+								"name": "init",
+								"value": {
+									"class": "Constant",
+									"id": "node_118956",
+									"value": "1",
+									"eval": 1,
+									"type": "constant int",
+									"source": "box: [latch $in1 $in2 @init 1] => latch_2173"
+								},
+								"source": "box: [latch $in1 $in2 @init 1] => latch_2173"
+							}
+						},
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2 @init 1] => latch_2173"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124989",
+						"name": "latch_2173",
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2 @init 1] => latch_2173"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [latch $in1 $in2 @init 1] => latch_2173"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124990",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124991",
+						"operator": "plusequals",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124992",
+								"name": "latch_2173",
+								"type": "signal t_sample",
+								"source": "box: [plusequals $in1 $in2] => plusequals_2175"
+							},
+							{
+								"class": "Variable",
+								"id": "node_124993",
+								"name": "mul_2180",
+								"type": "signal t_sample",
+								"source": "box: [plusequals $in1 $in2] => plusequals_2175"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [plusequals $in1 $in2] => plusequals_2175"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124994",
+						"name": "plusequals_2175",
+						"type": "signal t_sample",
+						"source": "box: [plusequals $in1 $in2] => plusequals_2175"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [plusequals $in1 $in2] => plusequals_2175"
+			},
+			{
+				"class": "Statement",
+				"id": "node_124995",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_124996",
+						"operator": "min",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_124997",
+								"name": "plusequals_2175",
+								"type": "signal t_sample",
+								"source": "box: [min $in1 1] => min_2174"
+							},
+							{
+								"class": "Constant",
+								"id": "node_124998",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [min $in1 1] => min_2174"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [min $in1 1] => min_2174"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_124999",
+						"name": "min_2174",
+						"type": "signal t_sample",
+						"source": "box: [min $in1 1] => min_2174"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [min $in1 1] => min_2174"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125000",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125001",
+						"operator": "lt",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125002",
+								"name": "min_2174",
+								"type": "signal t_sample",
+								"source": "box: [lt $in1 1] => lt_2169"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125003",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [lt $in1 1] => lt_2169"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "box: [lt $in1 1] => lt_2169"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125004",
+						"name": "lt_2169",
+						"type": "signal int",
+						"source": "box: [lt $in1 1] => lt_2169"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [lt $in1 1] => lt_2169"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125005",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125006",
+						"name": "lt_2169",
+						"type": "signal int",
+						"source": "box: [out 3 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125007",
+						"name": "gen_3987",
+						"type": "signal int",
+						"source": "box: [out 3 $in1] => "
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [out 3 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_125008",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125009",
+						"operator": "sub",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125010",
+								"name": "min_2174",
+								"type": "signal t_sample",
+								"source": "box: [sub $in1 0.5] => sub_2240"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125011",
+								"value": "0.5",
+								"eval": 0.5,
+								"type": "constant t_sample",
+								"source": "box: [sub $in1 0.5] => sub_2240"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [sub $in1 0.5] => sub_2240"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125012",
+						"name": "sub_2240",
+						"type": "signal t_sample",
+						"source": "box: [sub $in1 0.5] => sub_2240"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [sub $in1 0.5] => sub_2240"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125013",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125014",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125015",
+								"name": "sub_2240",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2241"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125016",
+								"name": "sub_2240",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2241"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2241"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125017",
+						"name": "mul_2241",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2241"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [mul $in1 $in2] => mul_2241"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125018",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125019",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125020",
+								"name": "mul_2241",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 -twopi] => mul_2242"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125021",
+								"value": "-twopi",
+								"eval": -6.2831853071796,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 -twopi] => mul_2242"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 -twopi] => mul_2242"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125022",
+						"name": "mul_2242",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 -twopi] => mul_2242"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [mul $in1 -twopi] => mul_2242"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125023",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125024",
+						"operator": "exp",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125025",
+								"name": "mul_2242",
+								"type": "signal t_sample",
+								"source": "box: [exp $in1] => exp_2243"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [exp $in1] => exp_2243"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125026",
+						"name": "exp_2243",
+						"type": "signal t_sample",
+						"source": "box: [exp $in1] => exp_2243"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [exp $in1] => exp_2243"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125027",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125028",
+						"operator": "exp",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125029",
+								"name": "env_shape",
+								"type": "control t_sample",
+								"source": "box: [exp env_shape] => exp_2247"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [exp env_shape] => exp_2247"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125030",
+						"name": "exp_2247",
+						"type": "control t_sample",
+						"source": "box: [exp env_shape] => exp_2247"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [exp env_shape] => exp_2247"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125031",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125032",
+						"operator": "sign",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125033",
+								"name": "exp_2247",
+								"type": "control t_sample",
+								"source": "box: [sign $in1] => sign_2237"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control int",
+						"source": "box: [sign $in1] => sign_2237"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125034",
+						"name": "sign_2237",
+						"type": "control int",
+						"source": "box: [sign $in1] => sign_2237"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [sign $in1] => sign_2237"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125035",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125036",
+						"operator": "abs",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125037",
+								"name": "exp_2247",
+								"type": "control t_sample",
+								"source": "box: [abs $in1] => abs_2238"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [abs $in1] => abs_2238"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125038",
+						"name": "abs_2238",
+						"type": "control t_sample",
+						"source": "box: [abs $in1] => abs_2238"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [abs $in1] => abs_2238"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125039",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125040",
+						"operator": "pow",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125041",
+								"name": "min_2174",
+								"type": "signal t_sample",
+								"source": "box: [pow $in1 $in2] => pow_2246"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125042",
+								"name": "abs_2238",
+								"type": "control t_sample",
+								"source": "box: [pow $in1 $in2] => pow_2246"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [pow $in1 $in2] => pow_2246"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125043",
+						"name": "pow_2246",
+						"type": "signal t_sample",
+						"source": "box: [pow $in1 $in2] => pow_2246"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [pow $in1 $in2] => pow_2246"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125044",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125045",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125046",
+								"name": "pow_2246",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2236"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125047",
+								"name": "sign_2237",
+								"type": "control int",
+								"source": "box: [mul $in1 $in2] => mul_2236"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2236"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125048",
+						"name": "mul_2236",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2236"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [mul $in1 $in2] => mul_2236"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125049",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125050",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125051",
+								"name": "mul_2236",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 pi] => mul_2245"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125052",
+								"value": "pi",
+								"eval": 3.1415926535898,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 pi] => mul_2245"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 pi] => mul_2245"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125053",
+						"name": "mul_2245",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 pi] => mul_2245"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [mul $in1 pi] => mul_2245"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125054",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125055",
+						"operator": "sin",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125056",
+								"name": "mul_2245",
+								"type": "signal t_sample",
+								"source": "box: [sin $in1] => sin_2244"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [sin $in1] => sin_2244"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125057",
+						"name": "sin_2244",
+						"type": "signal t_sample",
+						"source": "box: [sin $in1] => sin_2244"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [sin $in1] => sin_2244"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125058",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125059",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125060",
+								"name": "exp_2243",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2239"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125061",
+								"name": "sin_2244",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2239"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2239"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125062",
+						"name": "mul_2239",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2239"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: source: [gen $in1 @title envelope] => gen_2248 parent: box: [mul $in1 $in2] => mul_2239"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125066",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125067",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125068",
+								"name": "phasor_2181",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2170"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125388",
+								"name": "mul_2239",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_2170"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2170"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125070",
+						"name": "mul_2170",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_2170"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [mul $in1 $in2] => mul_2170"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125074",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125075",
+						"operator": "fixdenorm",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125076",
+								"name": "lt_2169",
+								"type": "signal int",
+								"source": "box: [history history_2179 0 $in1] => history_2179"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [history history_2179 0 $in1] => history_2179"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125077",
+						"name": "history_2179_next_3984",
+						"type": "signal t_sample",
+						"source": "box: [history history_2179 0 $in1] => history_2179"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [history history_2179 0 $in1] => history_2179"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125078",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125079",
+						"name": "pitch",
+						"type": "signal t_sample",
+						"source": "code: 1:1 -> 1:6 [expr] => expr_3279"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125080",
+						"name": "expr_3279",
+						"type": "signal t_sample",
+						"source": "code: 1:1 -> 1:6 [expr] => expr_3279"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: code: 1:1 -> 1:6 [expr] => expr_3279"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125081",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125082",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125083",
+								"name": "gen_3985",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3218"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125084",
+								"name": "history_3219",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3218"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3218"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125085",
+						"name": "mul_3218",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3218"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [mul $in1 $in2] => mul_3218"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125086",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125087",
+						"name": "mul_3218",
+						"type": "signal t_sample",
+						"source": "box: [out 1 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125088",
+						"name": "gen_3281",
+						"type": "signal t_sample",
+						"source": "box: [out 1 $in1] => "
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [out 1 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_125089",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125090",
+						"operator": "not",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125091",
+								"name": "history_3219",
+								"type": "signal t_sample",
+								"source": "box: [not $in1] => not_3217"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "box: [not $in1] => not_3217"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125092",
+						"name": "not_3217",
+						"type": "signal int",
+						"source": "box: [not $in1] => not_3217"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [not $in1] => not_3217"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125093",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125094",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125095",
+								"name": "gen_3985",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3220"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125096",
+								"name": "not_3217",
+								"type": "signal int",
+								"source": "box: [mul $in1 $in2] => mul_3220"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3220"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125097",
+						"name": "mul_3220",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3220"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [mul $in1 $in2] => mul_3220"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125098",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125099",
+						"operator": "latch",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125100",
+								"name": "expr_3279",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2] => latch_3207"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125101",
+								"name": "mul_3220",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2] => latch_3207"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2] => latch_3207"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125102",
+						"name": "latch_3207",
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2] => latch_3207"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [latch $in1 $in2] => latch_3207"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125103",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125104",
+						"operator": "phasor",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125105",
+								"name": "latch_3207",
+								"type": "signal t_sample",
+								"source": "box: [phasor $in1 $in2] => phasor_3221"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125106",
+								"value": "0",
+								"eval": 0,
+								"type": "constant int",
+								"source": "box: [phasor $in1 $in2] => phasor_3221"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_3221"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125107",
+						"name": "phasor_3221",
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_3221"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [phasor $in1 $in2] => phasor_3221"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125108",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125109",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125110",
+								"name": "in3",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 samplerate] => mul_3227"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125111",
+								"value": "samplerate",
+								"eval": 44100,
+								"type": "constant int",
+								"source": "box: [mul $in1 samplerate] => mul_3227"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 samplerate] => mul_3227"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125112",
+						"name": "mul_3227",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 samplerate] => mul_3227"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [mul $in1 samplerate] => mul_3227"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125113",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125114",
+						"operator": "div",
+						"inputs": [
+							{
+								"class": "Constant",
+								"id": "node_125115",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [rdiv $in1 1] => rdiv_3212"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125116",
+								"name": "mul_3227",
+								"type": "signal t_sample",
+								"source": "box: [rdiv $in1 1] => rdiv_3212"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [rdiv $in1 1] => rdiv_3212"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125117",
+						"name": "rdiv_3212",
+						"type": "signal t_sample",
+						"source": "box: [rdiv $in1 1] => rdiv_3212"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [rdiv $in1 1] => rdiv_3212"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125118",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125119",
+						"operator": "latch",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125120",
+								"name": "rdiv_3212",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2 @init 1] => latch_3213"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125121",
+								"name": "mul_3220",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2 @init 1] => latch_3213"
+							}
+						],
+						"attributes": {
+							"init": {
+								"class": "Attribute",
+								"id": "node_125122",
+								"name": "init",
+								"value": {
+									"class": "Constant",
+									"id": "node_95361",
+									"value": "1",
+									"eval": 1,
+									"type": "constant int",
+									"source": "box: [latch $in1 $in2 @init 1] => latch_3213"
+								},
+								"source": "box: [latch $in1 $in2 @init 1] => latch_3213"
+							}
+						},
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2 @init 1] => latch_3213"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125123",
+						"name": "latch_3213",
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2 @init 1] => latch_3213"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [latch $in1 $in2 @init 1] => latch_3213"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125124",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125125",
+						"operator": "plusequals",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125126",
+								"name": "latch_3213",
+								"type": "signal t_sample",
+								"source": "box: [plusequals $in1 $in2] => plusequals_3215"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125127",
+								"value": "0",
+								"eval": 0,
+								"type": "constant int",
+								"source": "box: [plusequals $in1 $in2] => plusequals_3215"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [plusequals $in1 $in2] => plusequals_3215"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125128",
+						"name": "plusequals_3215",
+						"type": "signal t_sample",
+						"source": "box: [plusequals $in1 $in2] => plusequals_3215"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [plusequals $in1 $in2] => plusequals_3215"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125129",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125130",
+						"operator": "min",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125131",
+								"name": "plusequals_3215",
+								"type": "signal t_sample",
+								"source": "box: [min $in1 1] => min_3214"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125132",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [min $in1 1] => min_3214"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [min $in1 1] => min_3214"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125133",
+						"name": "min_3214",
+						"type": "signal t_sample",
+						"source": "box: [min $in1 1] => min_3214"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [min $in1 1] => min_3214"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125134",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125135",
+						"operator": "lt",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125136",
+								"name": "min_3214",
+								"type": "signal t_sample",
+								"source": "box: [lt $in1 1] => lt_3209"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125137",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [lt $in1 1] => lt_3209"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "box: [lt $in1 1] => lt_3209"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125138",
+						"name": "lt_3209",
+						"type": "signal int",
+						"source": "box: [lt $in1 1] => lt_3209"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [lt $in1 1] => lt_3209"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125139",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125140",
+						"name": "lt_3209",
+						"type": "signal int",
+						"source": "box: [out 3 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125141",
+						"name": "gen_3283",
+						"type": "signal int",
+						"source": "box: [out 3 $in1] => "
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [out 3 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_125142",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125143",
+						"operator": "sub",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125144",
+								"name": "min_3214",
+								"type": "signal t_sample",
+								"source": "box: [sub $in1 0.5] => sub_3238"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125145",
+								"value": "0.5",
+								"eval": 0.5,
+								"type": "constant t_sample",
+								"source": "box: [sub $in1 0.5] => sub_3238"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [sub $in1 0.5] => sub_3238"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125146",
+						"name": "sub_3238",
+						"type": "signal t_sample",
+						"source": "box: [sub $in1 0.5] => sub_3238"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [sub $in1 0.5] => sub_3238"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125147",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125148",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125149",
+								"name": "sub_3238",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3239"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125150",
+								"name": "sub_3238",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3239"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3239"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125151",
+						"name": "mul_3239",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3239"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [mul $in1 $in2] => mul_3239"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125152",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125153",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125154",
+								"name": "mul_3239",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 -twopi] => mul_3240"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125155",
+								"value": "-twopi",
+								"eval": -6.2831853071796,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 -twopi] => mul_3240"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 -twopi] => mul_3240"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125156",
+						"name": "mul_3240",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 -twopi] => mul_3240"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [mul $in1 -twopi] => mul_3240"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125157",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125158",
+						"operator": "exp",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125159",
+								"name": "mul_3240",
+								"type": "signal t_sample",
+								"source": "box: [exp $in1] => exp_3241"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [exp $in1] => exp_3241"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125160",
+						"name": "exp_3241",
+						"type": "signal t_sample",
+						"source": "box: [exp $in1] => exp_3241"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [exp $in1] => exp_3241"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125161",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125162",
+						"operator": "exp",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125163",
+								"name": "env_shape",
+								"type": "control t_sample",
+								"source": "box: [exp env_shape] => exp_3245"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [exp env_shape] => exp_3245"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125164",
+						"name": "exp_3245",
+						"type": "control t_sample",
+						"source": "box: [exp env_shape] => exp_3245"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [exp env_shape] => exp_3245"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125165",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125166",
+						"operator": "sign",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125167",
+								"name": "exp_3245",
+								"type": "control t_sample",
+								"source": "box: [sign $in1] => sign_3235"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control int",
+						"source": "box: [sign $in1] => sign_3235"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125168",
+						"name": "sign_3235",
+						"type": "control int",
+						"source": "box: [sign $in1] => sign_3235"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [sign $in1] => sign_3235"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125169",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125170",
+						"operator": "abs",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125171",
+								"name": "exp_3245",
+								"type": "control t_sample",
+								"source": "box: [abs $in1] => abs_3236"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [abs $in1] => abs_3236"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125172",
+						"name": "abs_3236",
+						"type": "control t_sample",
+						"source": "box: [abs $in1] => abs_3236"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [abs $in1] => abs_3236"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125173",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125174",
+						"operator": "pow",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125175",
+								"name": "min_3214",
+								"type": "signal t_sample",
+								"source": "box: [pow $in1 $in2] => pow_3244"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125176",
+								"name": "abs_3236",
+								"type": "control t_sample",
+								"source": "box: [pow $in1 $in2] => pow_3244"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [pow $in1 $in2] => pow_3244"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125177",
+						"name": "pow_3244",
+						"type": "signal t_sample",
+						"source": "box: [pow $in1 $in2] => pow_3244"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [pow $in1 $in2] => pow_3244"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125178",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125179",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125180",
+								"name": "pow_3244",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3234"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125181",
+								"name": "sign_3235",
+								"type": "control int",
+								"source": "box: [mul $in1 $in2] => mul_3234"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3234"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125182",
+						"name": "mul_3234",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3234"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [mul $in1 $in2] => mul_3234"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125183",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125184",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125185",
+								"name": "mul_3234",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 pi] => mul_3243"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125186",
+								"value": "pi",
+								"eval": 3.1415926535898,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 pi] => mul_3243"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 pi] => mul_3243"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125187",
+						"name": "mul_3243",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 pi] => mul_3243"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [mul $in1 pi] => mul_3243"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125188",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125189",
+						"operator": "sin",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125190",
+								"name": "mul_3243",
+								"type": "signal t_sample",
+								"source": "box: [sin $in1] => sin_3242"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [sin $in1] => sin_3242"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125191",
+						"name": "sin_3242",
+						"type": "signal t_sample",
+						"source": "box: [sin $in1] => sin_3242"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [sin $in1] => sin_3242"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125192",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125193",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125194",
+								"name": "exp_3241",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3237"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125195",
+								"name": "sin_3242",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3237"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3237"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125196",
+						"name": "mul_3237",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3237"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: source: [gen $in1 @title envelope] => gen_3246 parent: box: [mul $in1 $in2] => mul_3237"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125200",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125201",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125202",
+								"name": "phasor_3221",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3210"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125389",
+								"name": "mul_3237",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3210"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3210"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125204",
+						"name": "mul_3210",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3210"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [mul $in1 $in2] => mul_3210"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125208",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125209",
+						"operator": "fixdenorm",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125210",
+								"name": "lt_3209",
+								"type": "signal int",
+								"source": "box: [history history_3219 0 $in1] => history_3219"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [history history_3219 0 $in1] => history_3219"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125211",
+						"name": "history_3219_next_3280",
+						"type": "signal t_sample",
+						"source": "box: [history history_3219 0 $in1] => history_3219"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [history history_3219 0 $in1] => history_3219"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125212",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125213",
+						"name": "pitch",
+						"type": "signal t_sample",
+						"source": "code: 1:1 -> 1:6 [expr] => expr_4016"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125214",
+						"name": "expr_4016",
+						"type": "signal t_sample",
+						"source": "code: 1:1 -> 1:6 [expr] => expr_4016"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: code: 1:1 -> 1:6 [expr] => expr_4016"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125223",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125224",
+						"operator": "not",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125225",
+								"name": "history_4013",
+								"type": "signal t_sample",
+								"source": "box: [not $in1] => not_4011"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "box: [not $in1] => not_4011"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125226",
+						"name": "not_4011",
+						"type": "signal int",
+						"source": "box: [not $in1] => not_4011"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [not $in1] => not_4011"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125227",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125228",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125229",
+								"name": "gen_3281",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_4014"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125230",
+								"name": "not_4011",
+								"type": "signal int",
+								"source": "box: [mul $in1 $in2] => mul_4014"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_4014"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125231",
+						"name": "mul_4014",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_4014"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [mul $in1 $in2] => mul_4014"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125232",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125233",
+						"operator": "latch",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125234",
+								"name": "expr_4016",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2] => latch_3989"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125235",
+								"name": "mul_4014",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2] => latch_3989"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2] => latch_3989"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125236",
+						"name": "latch_3989",
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2] => latch_3989"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [latch $in1 $in2] => latch_3989"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125237",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125238",
+						"operator": "phasor",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125239",
+								"name": "latch_3989",
+								"type": "signal t_sample",
+								"source": "box: [phasor $in1 $in2] => phasor_4015"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125240",
+								"value": "0",
+								"eval": 0,
+								"type": "constant int",
+								"source": "box: [phasor $in1 $in2] => phasor_4015"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_4015"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125241",
+						"name": "phasor_4015",
+						"type": "signal t_sample",
+						"source": "box: [phasor $in1 $in2] => phasor_4015"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [phasor $in1 $in2] => phasor_4015"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125242",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125243",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125244",
+								"name": "in3",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 samplerate] => mul_3993"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125245",
+								"value": "samplerate",
+								"eval": 44100,
+								"type": "constant int",
+								"source": "box: [mul $in1 samplerate] => mul_3993"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 samplerate] => mul_3993"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125246",
+						"name": "mul_3993",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 samplerate] => mul_3993"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [mul $in1 samplerate] => mul_3993"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125247",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125248",
+						"operator": "div",
+						"inputs": [
+							{
+								"class": "Constant",
+								"id": "node_125249",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [rdiv $in1 1] => rdiv_3994"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125250",
+								"name": "mul_3993",
+								"type": "signal t_sample",
+								"source": "box: [rdiv $in1 1] => rdiv_3994"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [rdiv $in1 1] => rdiv_3994"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125251",
+						"name": "rdiv_3994",
+						"type": "signal t_sample",
+						"source": "box: [rdiv $in1 1] => rdiv_3994"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [rdiv $in1 1] => rdiv_3994"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125252",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125253",
+						"operator": "latch",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125254",
+								"name": "rdiv_3994",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2 @init 1] => latch_3995"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125255",
+								"name": "mul_4014",
+								"type": "signal t_sample",
+								"source": "box: [latch $in1 $in2 @init 1] => latch_3995"
+							}
+						],
+						"attributes": {
+							"init": {
+								"class": "Attribute",
+								"id": "node_125256",
+								"name": "init",
+								"value": {
+									"class": "Constant",
+									"id": "node_121101",
+									"value": "1",
+									"eval": 1,
+									"type": "constant int",
+									"source": "box: [latch $in1 $in2 @init 1] => latch_3995"
+								},
+								"source": "box: [latch $in1 $in2 @init 1] => latch_3995"
+							}
+						},
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2 @init 1] => latch_3995"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125257",
+						"name": "latch_3995",
+						"type": "signal t_sample",
+						"source": "box: [latch $in1 $in2 @init 1] => latch_3995"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [latch $in1 $in2 @init 1] => latch_3995"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125258",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125259",
+						"operator": "plusequals",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125260",
+								"name": "latch_3995",
+								"type": "signal t_sample",
+								"source": "box: [plusequals $in1 $in2] => plusequals_3997"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125261",
+								"name": "mul_4014",
+								"type": "signal t_sample",
+								"source": "box: [plusequals $in1 $in2] => plusequals_3997"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [plusequals $in1 $in2] => plusequals_3997"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125262",
+						"name": "plusequals_3997",
+						"type": "signal t_sample",
+						"source": "box: [plusequals $in1 $in2] => plusequals_3997"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [plusequals $in1 $in2] => plusequals_3997"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125263",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125264",
+						"operator": "min",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125265",
+								"name": "plusequals_3997",
+								"type": "signal t_sample",
+								"source": "box: [min $in1 1] => min_3996"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125266",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [min $in1 1] => min_3996"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [min $in1 1] => min_3996"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125267",
+						"name": "min_3996",
+						"type": "signal t_sample",
+						"source": "box: [min $in1 1] => min_3996"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [min $in1 1] => min_3996"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125268",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125269",
+						"operator": "lt",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125270",
+								"name": "min_3996",
+								"type": "signal t_sample",
+								"source": "box: [lt $in1 1] => lt_3991"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125271",
+								"value": "1",
+								"eval": 1,
+								"type": "constant int",
+								"source": "box: [lt $in1 1] => lt_3991"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "box: [lt $in1 1] => lt_3991"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125272",
+						"name": "lt_3991",
+						"type": "signal int",
+						"source": "box: [lt $in1 1] => lt_3991"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [lt $in1 1] => lt_3991"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125273",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125274",
+						"name": "lt_3991",
+						"type": "signal int",
+						"source": "box: [out 3 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125275",
+						"name": "gen_4020",
+						"type": "signal int",
+						"source": "box: [out 3 $in1] => "
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [out 3 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_125276",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125277",
+						"operator": "sub",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125278",
+								"name": "min_3996",
+								"type": "signal t_sample",
+								"source": "box: [sub $in1 0.5] => sub_4002"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125279",
+								"value": "0.5",
+								"eval": 0.5,
+								"type": "constant t_sample",
+								"source": "box: [sub $in1 0.5] => sub_4002"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [sub $in1 0.5] => sub_4002"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125280",
+						"name": "sub_4002",
+						"type": "signal t_sample",
+						"source": "box: [sub $in1 0.5] => sub_4002"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [sub $in1 0.5] => sub_4002"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125281",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125282",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125283",
+								"name": "sub_4002",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_4003"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125284",
+								"name": "sub_4002",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_4003"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_4003"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125285",
+						"name": "mul_4003",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_4003"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [mul $in1 $in2] => mul_4003"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125286",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125287",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125288",
+								"name": "mul_4003",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 -twopi] => mul_4004"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125289",
+								"value": "-twopi",
+								"eval": -6.2831853071796,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 -twopi] => mul_4004"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 -twopi] => mul_4004"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125290",
+						"name": "mul_4004",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 -twopi] => mul_4004"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [mul $in1 -twopi] => mul_4004"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125291",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125292",
+						"operator": "exp",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125293",
+								"name": "mul_4004",
+								"type": "signal t_sample",
+								"source": "box: [exp $in1] => exp_4005"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [exp $in1] => exp_4005"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125294",
+						"name": "exp_4005",
+						"type": "signal t_sample",
+						"source": "box: [exp $in1] => exp_4005"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [exp $in1] => exp_4005"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125295",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125296",
+						"operator": "exp",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125297",
+								"name": "env_shape",
+								"type": "control t_sample",
+								"source": "box: [exp env_shape] => exp_4009"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [exp env_shape] => exp_4009"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125298",
+						"name": "exp_4009",
+						"type": "control t_sample",
+						"source": "box: [exp env_shape] => exp_4009"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [exp env_shape] => exp_4009"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125299",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125300",
+						"operator": "sign",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125301",
+								"name": "exp_4009",
+								"type": "control t_sample",
+								"source": "box: [sign $in1] => sign_3999"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control int",
+						"source": "box: [sign $in1] => sign_3999"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125302",
+						"name": "sign_3999",
+						"type": "control int",
+						"source": "box: [sign $in1] => sign_3999"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [sign $in1] => sign_3999"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125303",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125304",
+						"operator": "abs",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125305",
+								"name": "exp_4009",
+								"type": "control t_sample",
+								"source": "box: [abs $in1] => abs_4000"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "control t_sample",
+						"source": "box: [abs $in1] => abs_4000"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125306",
+						"name": "abs_4000",
+						"type": "control t_sample",
+						"source": "box: [abs $in1] => abs_4000"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [abs $in1] => abs_4000"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125307",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125308",
+						"operator": "pow",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125309",
+								"name": "min_3996",
+								"type": "signal t_sample",
+								"source": "box: [pow $in1 $in2] => pow_4008"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125310",
+								"name": "abs_4000",
+								"type": "control t_sample",
+								"source": "box: [pow $in1 $in2] => pow_4008"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [pow $in1 $in2] => pow_4008"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125311",
+						"name": "pow_4008",
+						"type": "signal t_sample",
+						"source": "box: [pow $in1 $in2] => pow_4008"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [pow $in1 $in2] => pow_4008"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125312",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125313",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125314",
+								"name": "pow_4008",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3998"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125315",
+								"name": "sign_3999",
+								"type": "control int",
+								"source": "box: [mul $in1 $in2] => mul_3998"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3998"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125316",
+						"name": "mul_3998",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3998"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [mul $in1 $in2] => mul_3998"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125317",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125318",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125319",
+								"name": "mul_3998",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 pi] => mul_4007"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125320",
+								"value": "pi",
+								"eval": 3.1415926535898,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 pi] => mul_4007"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 pi] => mul_4007"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125321",
+						"name": "mul_4007",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 pi] => mul_4007"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [mul $in1 pi] => mul_4007"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125322",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125323",
+						"operator": "sin",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125324",
+								"name": "mul_4007",
+								"type": "signal t_sample",
+								"source": "box: [sin $in1] => sin_4006"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [sin $in1] => sin_4006"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125325",
+						"name": "sin_4006",
+						"type": "signal t_sample",
+						"source": "box: [sin $in1] => sin_4006"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [sin $in1] => sin_4006"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125326",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125327",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125328",
+								"name": "exp_4005",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_4001"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125329",
+								"name": "sin_4006",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_4001"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_4001"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125330",
+						"name": "mul_4001",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_4001"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: source: [gen $in1 @title envelope] => gen_4010 parent: box: [mul $in1 $in2] => mul_4001"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125334",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125335",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125336",
+								"name": "phasor_4015",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3992"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125390",
+								"name": "mul_4001",
+								"type": "signal t_sample",
+								"source": "box: [mul $in1 $in2] => mul_3992"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3992"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125338",
+						"name": "mul_3992",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 $in2] => mul_3992"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [mul $in1 $in2] => mul_3992"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125342",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125343",
+						"operator": "fixdenorm",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125344",
+								"name": "lt_3991",
+								"type": "signal int",
+								"source": "box: [history history_4013 0 $in1] => history_4013"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [history history_4013 0 $in1] => history_4013"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125345",
+						"name": "history_4013_next_4017",
+						"type": "signal t_sample",
+						"source": "box: [history history_4013 0 $in1] => history_4013"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [history history_4013 0 $in1] => history_4013"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125346",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125347",
+						"operator": "add",
+						"inputs": [
+							{
+								"class": "Expression",
+								"id": "node_125348",
+								"operator": "add",
+								"inputs": [
+									{
+										"class": "Variable",
+										"id": "node_125349",
+										"name": "gen_3283",
+										"type": "signal int",
+										"source": "join: [out 2 $in1] =>  1"
+									},
+									{
+										"class": "Variable",
+										"id": "node_125350",
+										"name": "gen_4020",
+										"type": "signal int",
+										"source": "join: [out 2 $in1] =>  1"
+									}
+								],
+								"attributes": {
+									
+								},
+								"type": "signal int",
+								"source": "join: [out 2 $in1] =>  1"
+							},
+							{
+								"class": "Variable",
+								"id": "node_125351",
+								"name": "gen_3987",
+								"type": "signal int",
+								"source": "join: [out 2 $in1] =>  1"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal int",
+						"source": "join: [out 2 $in1] =>  1"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125352",
+						"name": "out2",
+						"type": "signal t_sample",
+						"source": "box: [out 2 $in1] => "
+					}
+				],
+				"source": "box: [out 2 $in1] => "
+			},
+			{
+				"class": "Statement",
+				"id": "node_125353",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125354",
+						"operator": "mul",
+						"inputs": [
+							{
+								"class": "Expression",
+								"id": "node_125355",
+								"operator": "add",
+								"inputs": [
+									{
+										"class": "Expression",
+										"id": "node_125356",
+										"operator": "add",
+										"inputs": [
+											{
+												"class": "Variable",
+												"id": "node_125391",
+												"name": "mul_3210",
+												"type": "signal t_sample",
+												"source": "join: [mul $in1 0.25] => mul_1958 1"
+											},
+											{
+												"class": "Variable",
+												"id": "node_125392",
+												"name": "mul_3992",
+												"type": "signal t_sample",
+												"source": "join: [mul $in1 0.25] => mul_1958 1"
+											}
+										],
+										"attributes": {
+											
+										},
+										"type": "signal t_sample",
+										"source": "join: [mul $in1 0.25] => mul_1958 1"
+									},
+									{
+										"class": "Variable",
+										"id": "node_125393",
+										"name": "mul_2170",
+										"type": "signal t_sample",
+										"source": "join: [mul $in1 0.25] => mul_1958 1"
+									}
+								],
+								"attributes": {
+									
+								},
+								"type": "signal t_sample",
+								"source": "join: [mul $in1 0.25] => mul_1958 1"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125360",
+								"value": "0.25",
+								"eval": 0.25,
+								"type": "constant t_sample",
+								"source": "box: [mul $in1 0.25] => mul_1958"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 0.25] => mul_1958"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125361",
+						"name": "mul_1958",
+						"type": "signal t_sample",
+						"source": "box: [mul $in1 0.25] => mul_1958"
+					}
+				],
+				"source": "box: [mul $in1 0.25] => mul_1958"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125362",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125363",
+						"name": "mul_1958",
+						"type": "signal t_sample",
+						"source": "box: [out 1 $in1] => "
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125364",
 						"name": "out1",
 						"type": "signal t_sample",
 						"source": "box: [out 1 $in1] => "
@@ -308,28 +3539,175 @@
 			},
 			{
 				"class": "Statement",
-				"id": "node_125695",
+				"id": "node_125365",
 				"inputs": [
 					{
-						"class": "Variable",
-						"id": "node_125696",
-						"name": "phasor_2492",
+						"class": "Expression",
+						"id": "node_125366",
+						"operator": "mtof",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125367",
+								"name": "in2",
+								"type": "signal t_sample",
+								"source": "box: [mtof $in1 $in2] => mtof_2450"
+							},
+							{
+								"class": "Constant",
+								"id": "node_125368",
+								"value": "440",
+								"eval": 440,
+								"type": "constant int",
+								"source": "box: [mtof $in1 $in2] => mtof_2450"
+							}
+						],
+						"attributes": {
+							
+						},
 						"type": "signal t_sample",
-						"source": "box: [out 2 $in1] => "
+						"source": "box: [mtof $in1 $in2] => mtof_2450"
 					}
 				],
 				"outputs": [
 					{
 						"class": "Variable",
-						"id": "node_125697",
-						"name": "out2",
+						"id": "node_125369",
+						"name": "mtof_2450",
 						"type": "signal t_sample",
-						"source": "box: [out 2 $in1] => "
+						"source": "box: [mtof $in1 $in2] => mtof_2450"
 					}
 				],
-				"source": "box: [out 2 $in1] => "
+				"source": "box: [mtof $in1 $in2] => mtof_2450"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125370",
+				"inputs": [
+					{
+						"class": "Expression",
+						"id": "node_125371",
+						"operator": "fixdenorm",
+						"inputs": [
+							{
+								"class": "Variable",
+								"id": "node_125372",
+								"name": "mtof_2450",
+								"type": "signal t_sample",
+								"source": "box: [history pitch 0 $in1] => pitch"
+							}
+						],
+						"attributes": {
+							
+						},
+						"type": "signal t_sample",
+						"source": "box: [history pitch 0 $in1] => pitch"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125373",
+						"name": "pitch_next_4022",
+						"type": "signal t_sample",
+						"source": "box: [history pitch 0 $in1] => pitch"
+					}
+				],
+				"source": "box: [history pitch 0 $in1] => pitch"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125374",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125375",
+						"name": "history_2179_next_3984",
+						"type": "signal t_sample",
+						"source": "box: [history history_2179 0 $in1] => history_2179"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125376",
+						"name": "history_2179",
+						"type": "signal t_sample",
+						"source": "box: [history history_2179 0 $in1] => history_2179"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3985,gen_3986,gen_3987 parent: box: [history history_2179 0 $in1] => history_2179"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125377",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125378",
+						"name": "pitch_next_4022",
+						"type": "signal t_sample",
+						"source": "box: [history pitch 0 $in1] => pitch"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125379",
+						"name": "pitch",
+						"type": "signal t_sample",
+						"source": "box: [history pitch 0 $in1] => pitch"
+					}
+				],
+				"source": "box: [history pitch 0 $in1] => pitch"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125380",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125381",
+						"name": "history_4013_next_4017",
+						"type": "signal t_sample",
+						"source": "box: [history history_4013 0 $in1] => history_4013"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125382",
+						"name": "history_4013",
+						"type": "signal t_sample",
+						"source": "box: [history history_4013 0 $in1] => history_4013"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_4018,gen_4019,gen_4020 parent: box: [history history_4013 0 $in1] => history_4013"
+			},
+			{
+				"class": "Statement",
+				"id": "node_125383",
+				"inputs": [
+					{
+						"class": "Variable",
+						"id": "node_125384",
+						"name": "history_3219_next_3280",
+						"type": "signal t_sample",
+						"source": "box: [history history_3219 0 $in1] => history_3219"
+					}
+				],
+				"outputs": [
+					{
+						"class": "Variable",
+						"id": "node_125385",
+						"name": "history_3219",
+						"type": "signal t_sample",
+						"source": "box: [history history_3219 0 $in1] => history_3219"
+					}
+				],
+				"source": "source: [gen $in1 $in2 @file poly-phasor] => gen_3281,gen_3282,gen_3283 parent: box: [history history_3219 0 $in1] => history_3219"
 			}
 		]
 	},
-	"source": "patcher: gen.patcher 000000003B12DCA0 graph 000000003B39AE80"
+	"source": "patcher: gen.patcher 00000000388EDC10 graph 000000003B102FF0"
 }

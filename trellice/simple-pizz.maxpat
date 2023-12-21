@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 6,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 426.0, 476.0, 850.0, 938.0 ],
+		"rect" : [ 34.0, 84.0, 1213.0, 610.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,40 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 518.0, 642.0, 32.0, 22.0 ],
-					"text" : "print"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-10",
-					"maxclass" : "number~",
-					"mode" : 2,
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 328.833333333333258, 419.5, 56.0, 22.0 ],
-					"sig" : 0.0
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 82.0, 137.0, 24.0, 24.0 ]
+					"patching_rect" : [ 30.0, 129.0, 80.0, 80.0 ]
 				}
 
 			}
@@ -88,19 +61,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 135.0, 415.0, 56.0, 22.0 ],
+					"patching_rect" : [ 118.0, 347.0, 56.0, 22.0 ],
 					"sig" : 0.0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "live.scope~",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 200.833333333333258, 135.0, 184.0, 68.0 ]
 				}
 
 			}
@@ -111,7 +73,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 47.0, 187.0, 39.0, 22.0 ],
+					"patching_rect" : [ 30.0, 220.0, 39.0, 22.0 ],
 					"text" : "click~"
 				}
 
@@ -123,7 +85,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 150.833333333333258, 514.0, 148.0, 62.0 ],
+					"patching_rect" : [ 133.833333333333258, 446.0, 148.0, 62.0 ],
 					"text" : "Feedback delay networks can get creepy when the delay lengths & weights are modulated..."
 				}
 
@@ -137,7 +99,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 47.0, 42.0, 224.0, 69.0 ],
+					"patching_rect" : [ 30.0, 48.0, 224.0, 69.0 ],
 					"text" : "ccam earth-trellice- simple pizz\n"
 				}
 
@@ -148,7 +110,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 47.0, 530.0, 46.0, 46.0 ]
+					"patching_rect" : [ 30.0, 462.0, 46.0, 46.0 ]
 				}
 
 			}
@@ -161,7 +123,7 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 47.0, 424.0, 45.0, 87.0 ],
+					"patching_rect" : [ 30.0, 356.0, 45.0, 87.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~",
@@ -194,7 +156,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 413.5, 135.0, 128.0, 128.0 ],
+					"patching_rect" : [ 265.5, 56.0, 128.0, 128.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -212,13 +174,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 1550.0, 246.0, 957.0, 886.0 ],
+						"rect" : [ 214.0, 153.0, 957.0, 886.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -812,9 +774,9 @@
  ]
 					}
 ,
-					"patching_rect" : [ 47.0, 349.0, 172.0, 36.0 ],
+					"patching_rect" : [ 30.0, 281.0, 172.0, 36.0 ],
 					"saved_object_attributes" : 					{
-						"exportfolder" : "C:/GitHub/earth/trellice/",
+						"exportfolder" : "C:/github/earth/trellice/",
 						"exportname" : "simple_2dpizz"
 					}
 ,
@@ -832,7 +794,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 47.0, 319.0, 150.0, 22.0 ]
+					"patching_rect" : [ 62.0, 249.0, 150.0, 22.0 ]
 				}
 
 			}
@@ -840,23 +802,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"order" : 1,
 					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
-					"source" : [ "obj-10", 1 ]
 				}
 
 			}
@@ -878,13 +824,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"source" : [ "obj-3", 3 ]
 				}
 
 			}
@@ -931,7 +870,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "karplus-strong.gendsp",
-				"bootpath" : "C:/GitHub/earth/trellice",
+				"bootpath" : "C:/github/earth/trellice",
 				"patcherrelativepath" : ".",
 				"type" : "gDSP",
 				"implicit" : 1
@@ -939,42 +878,42 @@
 , 			{
 				"name" : "oopsy.ctrl.smooth3.gendsp",
 				"bootpath" : "~/OneDrive/Documents/Max 8/Packages/oopsy/code",
-				"patcherrelativepath" : "../../../Users/galajo/OneDrive/Documents/Max 8/Packages/oopsy/code",
+				"patcherrelativepath" : "../../../Users/garre/OneDrive/Documents/Max 8/Packages/oopsy/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "oopsy.cv2hz.gendsp",
 				"bootpath" : "~/OneDrive/Documents/Max 8/Packages/oopsy/code",
-				"patcherrelativepath" : "../../../Users/galajo/OneDrive/Documents/Max 8/Packages/oopsy/code",
+				"patcherrelativepath" : "../../../Users/garre/OneDrive/Documents/Max 8/Packages/oopsy/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "oopsy.gate.trig.gendsp",
 				"bootpath" : "~/OneDrive/Documents/Max 8/Packages/oopsy/code",
-				"patcherrelativepath" : "../../../Users/galajo/OneDrive/Documents/Max 8/Packages/oopsy/code",
+				"patcherrelativepath" : "../../../Users/garre/OneDrive/Documents/Max 8/Packages/oopsy/code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "oopsy.maxpat",
 				"bootpath" : "~/OneDrive/Documents/Max 8/Packages/oopsy/patchers",
-				"patcherrelativepath" : "../../../Users/galajo/OneDrive/Documents/Max 8/Packages/oopsy/patchers",
+				"patcherrelativepath" : "../../../Users/garre/OneDrive/Documents/Max 8/Packages/oopsy/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "oopsy.node4max.js",
 				"bootpath" : "~/OneDrive/Documents/Max 8/Packages/oopsy/javascript",
-				"patcherrelativepath" : "../../../Users/galajo/OneDrive/Documents/Max 8/Packages/oopsy/javascript",
+				"patcherrelativepath" : "../../../Users/garre/OneDrive/Documents/Max 8/Packages/oopsy/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "oopsy.snoop.js",
 				"bootpath" : "~/OneDrive/Documents/Max 8/Packages/oopsy/javascript",
-				"patcherrelativepath" : "../../../Users/galajo/OneDrive/Documents/Max 8/Packages/oopsy/javascript",
+				"patcherrelativepath" : "../../../Users/garre/OneDrive/Documents/Max 8/Packages/oopsy/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
